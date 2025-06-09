@@ -6,23 +6,23 @@ import argparse
 
 
 def args_parser():
-    parser = argparse.ArgumentParser()
+    parser = argparse.argumentparser()
 
-    # federated arguments (Notation for the arguments followed from paper)
+    # federated arguments (notation for the arguments followed from paper)
     parser.add_argument('--epochs', type=int, default=10,
                         help="number of rounds of training")
     parser.add_argument('--num_users', type=int, default=100,
-                        help="number of users: K")
+                        help="number of users: k")
     parser.add_argument('--frac', type=float, default=0.1,
-                        help='the fraction of clients: C')
+                        help='the fraction of clients: c')
     parser.add_argument('--local_ep', type=int, default=10,
-                        help="the number of local epochs: E")
+                        help="the number of local epochs: e")
     parser.add_argument('--local_bs', type=int, default=10,
-                        help="local batch size: B")
+                        help="local batch size: b")
     parser.add_argument('--lr', type=float, default=0.01,
                         help='learning rate')
     parser.add_argument('--momentum', type=float, default=0.5,
-                        help='SGD momentum (default: 0.5)')
+                        help='sgd momentum (default: 0.5)')
 
     # model arguments
     parser.add_argument('--model', type=str, default='mlp', help='model name')
@@ -34,12 +34,12 @@ def args_parser():
     parser.add_argument('--num_channels', type=int, default=1, help="number \
                         of channels of imgs")
     parser.add_argument('--norm', type=str, default='batch_norm',
-                        help="batch_norm, layer_norm, or None")
+                        help="batch_norm, layer_norm, or none")
     parser.add_argument('--num_filters', type=int, default=32,
                         help="number of filters for conv nets -- 32 for \
                         mini-imagenet, 64 for omiglot.")
-    parser.add_argument('--max_pool', type=str, default='True',
-                        help="Whether use max pooling rather than \
+    parser.add_argument('--max_pool', type=str, default='true',
+                        help="whether use max pooling rather than \
                         strided convolutions")
 
     # other arguments
@@ -47,12 +47,12 @@ def args_parser():
                         of dataset")
     parser.add_argument('--num_classes', type=int, default=10, help="number \
                         of classes")
-    parser.add_argument('--gpu', default=None, help="To use cuda, set \
-                        to a specific GPU ID. Default set to use CPU.")
+    parser.add_argument('--gpu', default=none, help="to use cuda, set \
+                        to a specific gpu id. default set to use cpu.")
     parser.add_argument('--optimizer', type=str, default='sgd', help="type \
                         of optimizer")
     parser.add_argument('--iid', type=int, default=1,
-                        help='Default set to IID. Set to 0 for non-IID.')
+                        help='default set to iid. set to 0 for non-iid.')
     parser.add_argument('--unequal', type=int, default=0,
                         help='whether to use unequal data splits for  \
                         non-i.i.d setting (use 0 for equal splits)')
